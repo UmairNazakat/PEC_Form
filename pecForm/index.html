@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>PEC</title>
+</head>
+
+<body>
+    <div class="ctrlqFormContentWrapper">
+        <div class="ctrlqHeaderMast"></div>
+        <div class="ctrlqCenteredContent">
+            <div class="ctrlqFormCard">
+                <div class="ctrlqAccent"></div>
+                <div class="ctrlqFormContent">
+
+                    <form id="myForm">
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <h4>Servey Form</h4>
+                                <p>All fields are required</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="organizationname" name="organizationname" type="text" class="validate"
+                                    data-error="#e1" required>
+                                <label for="name">Organization Name</label>
+                                <div id="e1"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="AboutOrganization" name="AboutOrganization" type="text" class="validate"
+                                    data-error="#e2" required>
+                                <label for="email">About Organization</label>
+                                <div id="e2"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="OrganizationResponsibility" name="OrganizationResponsibility" type="text"
+                                    class="validate" data-error="#e2" required>
+                                <label for="email">Organization Responsibility</label>
+                                <div id="e2"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p for="color">Organization Success</p>
+                                <div>
+                                    <input name="Organizationsuccess" type="radio" id="OrganizationsuccessYes"
+                                        value=true data-error="#e4" required>
+                                    <label for="OrganizationsuccessYes">Yes</label>
+                                </div>
+                                <p>
+                                    <input name="Organizationsuccess" type="radio" id="OrganizationsuccessNo"
+                                        value=false>
+                                    <label for="OrganizationsuccessNo">No</label>
+                                </p>
+                                <div class="input-field">
+                                    <br>
+                                    <div id="e4"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="organizationPurpse" name="organizationPurpse" type="text" class="validate"
+                                    data-error="#e2" required>
+                                <label for="email">Organization Purpse</label>
+                                <div id="e2"></div>
+                            </div>
+                        </div>
+
+                        <div id="formFields" class="formFieldsData">
+                            <!-- <div class="input-field">  -->
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="traineeName" name="traineeName[]" type="text" class="validate"
+                                        data-error="#e2" required>
+                                    <label for="email">Trainee Name</label>
+                                    <div id="e2"></div>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="traineeEmail" name="traineeEmail[]" type="text" class="validate"
+                                        data-error="#e2" required>
+                                    <label for="email">Trainee Email</label>
+                                    <div id="e2"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="TraineeNIC" name="TraineeNIC[]" type="text" class="validate"
+                                        data-error="#e2" required>
+                                    <label for="email">Trainee NIC</label>
+                                    <div id="e2"></div>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="AreaOfExpertise" name="AreaOfExpertise[]" type="text" class="validate"
+                                        data-error="#e2" required>
+                                    <label for="email">Area Of Expertise</label>
+                                    <div id="e2"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="designations" name="designations[]" type="text" class="validate"
+                                        data-error="#e2" required>
+                                    <label for="email">Designations</label>
+                                    <div id="e2"></div>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="DOB" name="DOB[]" type="date" id="birthdate" class="datepicker validate"
+                                        name="birthdate" data-error="#e5" placeholder=" " required>
+                                    <!-- <label for="email">Trainee Date Of Birth</label> -->
+                                    <div id="e2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <button type="button" onclick="addField()">Add More Field</button>
+                        <!-- <button type="submit">Submit</button> -->
+
+
+
+
+
+                        <div class="row">
+                            <div class="input-field col m6 s12">
+                                <button type="submit" class="waves-effect waves-light btn-large" id="formSubmit"><i
+                                        class="material-icons right">backup</i>Submit</button>
+                            </div>
+                        </div>
+
+                        <div id="qrcode"></div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+
+
+
+    <script>
+        $(document).on("click", "#formSubmit", function (a) {
+            var organizationname = $("#organizationname").val();
+            var AboutOrganization = $("#AboutOrganization").val();
+            var OrganizationResponsibility = $("#OrganizationResponsibility").val();
+            var Organizationsuccess = $("input[name='Organizationsuccess']:checked").val();
+            var organizationPurpse = $("#organizationPurpse").val();
+
+            var trainees = []; // Array to store trainee data
+
+            $(".formFieldsData").each(function () {
+                var traineeName = $(this).find(".validate[name='traineeName[]']").val();
+                var traineeEmail = $(this).find(".validate[name='traineeEmail[]']").val();
+                var TraineeNIC = $(this).find(".validate[name='TraineeNIC[]']").val();
+                var AreaOfExpertise = $(this).find(".validate[name='AreaOfExpertise[]']").val();
+                var designations = $(this).find(".validate[name='designations[]']").val();
+                var DOB = $(this).find(".validate[name='DOB[]']").val();
+
+                var trainee = {
+                    name: traineeName,
+                    email: traineeEmail,
+                    nic: TraineeNIC,
+                    areaOfExpertise: AreaOfExpertise,
+                    designations: designations,
+                    dob: DOB
+                };
+
+                trainees.push(trainee);
+            });
+
+            var data = {
+                organizationName: organizationname,
+                aboutOrganization: AboutOrganization,
+                organizationResponsibility: OrganizationResponsibility,
+                organizationSuccess: Organizationsuccess,
+                organizationPurpse: organizationPurpse,
+                trainees: trainees
+            };
+
+            console.log(data);
+
+            $.ajax({
+                url: "http://ec2-35-74-182-67.ap-northeast-1.compute.amazonaws.com:4000/organization",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    window.alert("Form Submit Successful ");
+                    console.log(data);
+                    var qrcodeData = {
+                        ID: response._id,
+                        organizationName: response.organizationName
+                    }
+                    var qrcode = new QRCode(document.getElementById("qrcode"), {
+                        text: JSON.stringify(qrcodeData), // Convert data to a JSON string
+                        width: 300,
+                        height: 300
+                    });
+
+                    // Convert the QR code to a downloadable image Start 
+                    var qrCodeImage = document.getElementById("qrcode").getElementsByTagName("img")[0];
+
+                    // Listen for the 'load' event on the image element
+                    qrCodeImage.addEventListener('load', function () {
+                        // Create a canvas to draw the QR code image
+                        var canvas = document.createElement("canvas");
+                        canvas.width = qrCodeImage.naturalWidth;
+                        canvas.height = qrCodeImage.naturalHeight;
+                        var context = canvas.getContext("2d");
+                        context.drawImage(qrCodeImage, 0, 0);
+
+                        // Get the data URL of the QR code image
+                        var imageDataURL = canvas.toDataURL("image/png");
+
+                        // Create a download link for the image
+                        var link = document.createElement("a");
+                        link.href = imageDataURL;
+                        link.download = "qrcode.png";
+
+                        // Trigger the download
+                        link.click();
+                    });
+ 
+
+                    var canvas = document.createElement("canvas");
+    canvas.width = qrCodeImage.naturalWidth;
+    canvas.height = qrCodeImage.naturalHeight;
+    var context = canvas.getContext("2d");
+    context.drawImage(qrCodeImage, 0, 0);
+
+    // Get the data URL of the QR code image
+    var imageDataURL = canvas.toDataURL("image/png");
+
+    // Create a download link for the image
+    var link = document.createElement("a");
+    link.href = imageDataURL;
+    link.download = "qrcode.png";
+
+    setTimeout(() => {
+  document.location.reload();
+}, 3000);
+ 
+
+                },
+                error: function (xhr, status, error) {
+                    var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : "An error occurred";
+                    window.alert(errorMessage);
+                    console.log(data);
+                }
+            });
+        });
+
+
+    </script>"
+
+</body>
+
+</html>
